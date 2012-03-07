@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+        <modules>
+                <LimeSoda_Api>
+                        <version>0.0.1</version>
+                </LimeSoda_Api>
+        </modules>
+
+        <global>
+                <events>
+                        <controller_action_postdispatch_api_V2_soap_index>
+                                <observers>
+                                        <fix_bug_26770>
+                                                <type>singleton</type>
+                                                <class>ls_api/observer</class>
+                                                <method>controllerActionPostdispatchApiV2SoapIndex</method>
+                                        </fix_bug_26770>
+                                </observers>
+                        </controller_action_postdispatch_api_V2_soap_index>
+                </events>
+                <models>
+                        <ls_api>
+                                <class>LimeSoda_Api_Model</class>
+                        </ls_api>
+                </models>
+        </global>
+</config>
