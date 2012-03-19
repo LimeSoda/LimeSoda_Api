@@ -12,7 +12,7 @@ class LimeSoda_Api_Model_Observer
         {
                 $controller = $observer->getEvent()->getControllerAction();
                 if ($controller->getRequest()->getParam('wsdl') !== null) {
-                        return;
+                        return $this;
                 }
                 $controller->getResponse()->setHeader('Content-Length',strlen($controller->getResponse()->getBody()), true);
                 return $this;
